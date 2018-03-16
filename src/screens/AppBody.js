@@ -29,7 +29,7 @@ class AppBody extends Component {
                     <h4 class="card-title"> Get Details of City</h4>
                     
                     <p class="card-text"> </p>
-                    <button class="btn btn-primary" onPress={()=>this.getdetails()} >Click to Get Details</button>
+                    <button class="btn btn-primary" onClick={()=>this.getdetails()} >Click to Get Details</button>
                 </div>
 
             </div>
