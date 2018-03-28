@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 
 
-class AppComponent2 extends Component {
+class AppComponent3 extends Component {
         
     constructor(props) {
         super(props);
@@ -36,11 +36,11 @@ class AppComponent2 extends Component {
 
   render() {
       
-    const result = this.state.input1 && this.state.input2 ? parseInt(this.state.input1) - parseInt(this.state.input2) : null;
+    const result = this.state.input1 && this.state.input2 ? parseInt(this.state.input1) / parseInt(this.state.input2) : null;
     return (
                 
         <div class="jumbotron">
-            <h1 class="display-3">Subtract 2 Numbers</h1>
+            <h1 class="display-3">Divide 2 Numbers</h1>
                 <hr class="my-4"/>
 
                 <fieldset>
@@ -65,4 +65,4 @@ class AppComponent2 extends Component {
   }
 }
 
-export default AppComponent2;
+export default AppComponent3;

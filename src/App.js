@@ -4,6 +4,7 @@ import AppHeader from './screens/AppHeader';
 import AppBody from './screens/AppBody';
 import AppFooter from './screens/AppFooter';
 import AppComponent2 from './screens/AppComponent2';
+import AppComponent3 from './screens/AppComponent3';
 class App extends Component {
   render() {
     return (
@@ -12,6 +13,7 @@ class App extends Component {
                   <AppHeader />
                   <AppBody />
                   <AppComponent2 />
+                  <AppComponent3 />
                   <AppFooter />
             
             
