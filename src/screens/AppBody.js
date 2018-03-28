@@ -8,24 +8,28 @@ class AppBody extends Component {
         super(props);
         this.state = {
           input1: '',
-          input2 : ''
+          input2 : '',
+          result: 0
         };
     
         this.handleInputChange = this.handleInputChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.finalresult = this.finalresult.bind(this);
       }
     
       handleInputChange(event) {
         const target = event.target;
         console.log(target); // event.target is saved in target.
         const value = target.type === 'checkbox' ? target.checked : target.value;
-        console.log(value); //target.value is saved in value.
-        const name = target.name; //target.name is saved in name.
+        console.log(value); //target.value is saved in value. value={this.state.input1}
+        const name = target.name; //target.name is saved in name. //name="input1"
         console.log(name);
     
         this.setState({
           [name]: value
+
         });
+        
       }
       handleSubmit(event) {
         alert('This is input1: ' + this.state.input1);
@@ -33,10 +37,24 @@ class AppBody extends Component {
         event.preventDefault();
       }
 
+      finalresult(){
+
+        const result = this.state.input1 && this.state.input2 ? parseInt(this.state.input1) + parseInt(this.state.input2) : null;
+        this.setState({ 
+                result : result 
+
+        });
+        
+            return (
+
+                <p> Result is  {result} </p>
+            ) 
+      }
+
 
   render() {
-      
-    const result = this.state.input1 && this.state.input2 ? parseInt(this.state.input1) + parseInt(this.state.input2) : null;
+            const result = parseInt(this.state.result);
+
     return (
                 
         <div class="jumbotron">
@@ -44,18 +62,18 @@ class AppBody extends Component {
                 <hr class="my-4"/>
 
                 <fieldset>
-                    <form onSubmit={this.handleSubmit}>
+                    
                         <label class="control-label" for="readOnlyInput"> </label>
                         <input  value={this.state.input1} onChange={this.handleInputChange} class="form-control" id="input1" name="input1" type="text" placeholder="input here…" />
                         <input value={this.state.input2} onChange={this.handleInputChange} class="form-control" id="input2"  name="input2" type="text" placeholder="input here…" />
-                        <input type="submit" value="Submit" />
+                        <input onClick={()=>this.finalresult()} type="submit" value="Submit" />
                         
-                    </form>
+                   
                     
                 </fieldset>
 
-                    <p> This is the result {result} </p>
-
+                        
+                    <p> Result is {result} </p> 
         </div>
          
          
